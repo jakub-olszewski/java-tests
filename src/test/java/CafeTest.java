@@ -1,14 +1,20 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CafeTest {
 
+    Cafe cafe;
+
+    @Before
+    public void before(){
+        // given
+        cafe = new Cafe();
+    }
+
     @Test
     public void shouldServeCoffee() {
-
-        // given
-        Cafe cafe = new Cafe();
 
         // when
         cafe.serveCoffee();
@@ -20,9 +26,6 @@ public class CafeTest {
 
     @Test
     public void shouldNotServeCoffee() {
-
-        // given
-        Cafe cafe = new Cafe();
 
         // when
         //cafe.serveCoffee();
