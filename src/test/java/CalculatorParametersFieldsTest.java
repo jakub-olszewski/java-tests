@@ -1,6 +1,5 @@
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
@@ -11,19 +10,19 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 // default runner
 //@RunWith(JUnit4.class)
 @RunWith(value = Parameterized.class)// oznacza ze uzyjemy parametrów - wersja podstawowa
-public class CalculatorParametersConstructorTest {
+public class CalculatorParametersFieldsTest {
 
-    double number1, number2;//liczby globalne do testów
-    String result;// wynik
     Calculator calc;// kalkulator
 
-    // parametry są wrzucane do konstruktora
-    public CalculatorParametersConstructorTest(double number1, double number2, String result) {
-        this.number1 = number1;
-        this.number2 = number2;
-        this.result = result;
-        System.out.println(String.format("a=%s b=%s result=%s",number1,number2,result));
-    }
+    // ponizej pola z adnotacja parametrów
+    @Parameterized.Parameter(value = 0)
+    public double number1;
+
+    @Parameterized.Parameter(value = 1)
+    public double number2;
+
+    @Parameterized.Parameter(value = 2)
+    public String result;
 
     //kolejnosc w 'name' tak jak w konstruktorze czyli
     // {0} to number1
@@ -37,6 +36,8 @@ public class CalculatorParametersConstructorTest {
 
     @Test
     public void shouldAddSuccessedExecuteTest(){
+        System.out.println("Uruchamiam metode shouldAddSuccessedExecuteTest()");
+        System.out.println(String.format("a=%s b=%s result=%s",number1,number2,result));
 
         // given
         calc = new CalculatorImpl();
@@ -46,6 +47,8 @@ public class CalculatorParametersConstructorTest {
 
         // then
         assertTrue(result.equals(calc.display()));
+        System.out.println("Zakonczenie metody shouldAddSuccessedExecuteTest()");
+        System.out.println("--------------------------------------------------");
 
     }
 }
