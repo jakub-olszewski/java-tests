@@ -3,6 +3,9 @@ import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test kawiarni podstawowy test z wykorzystaniem prostych asercji
+ */
 public class CafeTest {
 
     Cafe cafe;
@@ -21,7 +24,6 @@ public class CafeTest {
 
         // then
         assertTrue(cafe.canServeCoffee());
-
     }
 
     @Test
@@ -32,7 +34,6 @@ public class CafeTest {
 
         // then
         assertFalse(cafe.canServeCoffee());
-
     }
 
 }
