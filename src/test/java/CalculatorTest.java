@@ -1,28 +1,29 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Ignore;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CalculatorTest {
+public class CalculatorTest {
 
     private Calculator calc;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         // given
          calc = new CalculatorImpl();
     }
 
-    @AfterEach
-    void tearDown() {
+    @After
+    public void tearDown() {
     }
 
     @Test
-    void shouldDisplayNumber(){
+    public void shouldDisplayNumber(){
 
         // when
         int number = 5;
@@ -33,7 +34,7 @@ class CalculatorTest {
     }
 
     @Test
-    void shouldNotDisplayNumber(){
+    public void shouldNotDisplayNumber(){
 
         // when
         // nic nie wciskamy na kalkulatorze
@@ -42,28 +43,42 @@ class CalculatorTest {
         assertTrue(calc.display().isEmpty(), "Wyświetlacz nie jest pusty ");
     }
 
-
+    /**
+     * Test 5 przykladow wykonania metody add() zakonczonych sukcesem
+     */
     @Test
-    void pressNumber() {
+    public void shouldAddSuccessedExecute(){
+
     }
 
+
+    @Ignore
     @Test
-    void display() {
+    public void pressNumber() {
     }
 
+    @Ignore
     @Test
-    void add() {
+    public void display() {
     }
 
+    @Ignore
     @Test
-    void sub() {
+    public void add() {
     }
 
+    @Ignore
     @Test
-    void div() {
+    public void sub() {
     }
 
+    @Ignore
     @Test
-    void multi() {
+    public void div() {
+    }
+
+    @Ignore
+    @Test
+    public void multi() {
     }
 }
