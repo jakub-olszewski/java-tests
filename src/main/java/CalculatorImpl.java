@@ -11,22 +11,24 @@ public class CalculatorImpl implements Calculator {
     }
 
     @Override
-    public void add() {
+    public void add(double number1, double number2) {
 
     }
 
     @Override
-    public void sub() {
+    public void sub(double number1, double number2) {
 
     }
 
     @Override
-    public void div() {
+    public void div(double number1, double number2) {
 
     }
 
     @Override
-    public void multi() {
+    public void multi(double number1, double number2) {
 
     }
+
+
 }

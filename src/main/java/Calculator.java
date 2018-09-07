@@ -16,11 +16,11 @@ public interface Calculator {
      */
     public String display ();
 
-    public void add();
+    public void add(double number1, double number2);
 
-    public void sub();
+    public void sub(double number1, double number2);
 
-    public void div();
+    public void div(double number1, double number2);
 
-    public void multi();
+    public void multi(double number1, double number2);
 }
