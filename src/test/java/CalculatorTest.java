@@ -2,12 +2,19 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
 
+    private Calculator calc;
+
     @BeforeEach
     void setUp() {
+        // given
+         calc = new CalculatorImpl();
     }
 
     @AfterEach
@@ -16,20 +23,23 @@ class CalculatorTest {
 
     @Test
     void shouldDisplayNumber(){
-        // given
 
         // when
+        int number = 5;
+        calc.pressNumber(number);
 
         // then
+        assertTrue(String.valueOf(number).equals(calc.display()), "Na wyświetlaczu nie ma liczby " + number);
     }
 
     @Test
     void shouldNotDisplayNumber(){
-        // given
 
         // when
+        // nic nie wciskamy na kalkulatorze
 
         // then
+        assertTrue(calc.display().isEmpty(), "Wyświetlacz nie jest pusty ");
     }
 
 
