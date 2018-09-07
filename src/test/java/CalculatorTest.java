@@ -8,6 +8,8 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// default runner
+//@RunWith(JUnit4.class)
 public class CalculatorTest {
 
     private Calculator calc;
@@ -47,7 +49,7 @@ public class CalculatorTest {
      * Test 5 przykladow wykonania metody add() zakonczonych sukcesem
      */
     @Test
-    public void shouldAddSuccessedExecute(){
+    public void shouldAddSuccessedExecuteTest(){
 
         calc.add(1,2);
         assertTrue("3.0".equals(calc.display()));
