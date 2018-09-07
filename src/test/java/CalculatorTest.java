@@ -49,6 +49,17 @@ public class CalculatorTest {
     @Test
     public void shouldAddSuccessedExecute(){
 
+        calc.add(1,2);
+        assertTrue("3.0".equals(calc.display()));
+        calc.add(2,2);
+        assertTrue("4.0".equals(calc.display()));
+        calc.add(3,2);
+        assertTrue("5.0".equals(calc.display()));
+        calc.add(4,2);
+        assertTrue("6.0".equals(calc.display()));
+        calc.add(5,2);
+        assertTrue("7.0".equals(calc.display()));
+
     }
 
 
