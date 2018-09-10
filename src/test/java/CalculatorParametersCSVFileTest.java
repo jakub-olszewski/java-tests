@@ -1,5 +1,6 @@
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,7 +37,22 @@ public class CalculatorParametersCSVFileTest {
     @Test
     @FileParameters("src/test/resources/CalculatorParametersSubCSVFileTest.csv")
     public void subTest(double number1, double number2, String result) {
-        calc.add(number1,number2);
+        calc.sub(number1,number2);
         assertEquals(result, calc.display());
+    }
+
+    //pobieranie parametrow z metody
+    @Test
+    @Parameters(method = "parametersToTestAdd")
+    public void minAndMaxValueInAddTest(
+            int a, int b, String expectedValue) {
+        calc.add(a, b);
+        assertEquals(expectedValue, calc.display());
+    }
+
+    private Object[] parametersToTestAdd() {
+        return new Object[]{
+                new Object[]{1, 2, "3.0"}
+                };
     }
 }
