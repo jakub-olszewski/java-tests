@@ -52,7 +52,11 @@ public class CalculatorParametersCSVFileTest {
 
     private Object[] parametersToTestAdd() {
         return new Object[]{
-                new Object[]{1, 2, "3.0"}
+                new Object[]{1, 2, "3.0"},
+                new Object[]{3, 2, "5.0"},
+                new Object[]{1, 4, "5.0"},
+                new Object[]{10, 2, "12.0"},
+                new Object[]{11, 2, "13.0"}
                 };
     }
 }
