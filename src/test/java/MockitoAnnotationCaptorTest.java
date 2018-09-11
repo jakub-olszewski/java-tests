@@ -30,6 +30,22 @@ public class MockitoAnnotationCaptorTest {
         assertEquals("one", arg.getValue());
     }
 
+    @Test
+    public void calc_whenNotUseCaptorAnnotation_thenCorrect() throws CalculatorException {
+        Calculator calc = Mockito.mock(Calculator.class);
+
+        // powolanie do zycia przechwytywacza String object
+        ArgumentCaptor<Double> arg = ArgumentCaptor.forClass(Double.class);
+
+        calc.pressNumber(2);
+
+        // przechwycenie dodanego powyzej obiektu "one"
+        //Mockito.verify(calc).add(arg.capture());
+
+        // pobieramy i sprawdzamy przechwycona wartosc
+        //assertEquals(2, arg.getValue());
+    }
+
     @Mock
     List mockedListObject;
 
