@@ -5,7 +5,13 @@ public class CalculatorImpl implements Calculator {
     }
 
     @Override
-    public void pressNumber(int number) {
+    public void pressNumber(Object number) throws CalculatorException {
+
+        if(number==null){
+            throw new CalculatorException("Error divide by zero");
+        }else{
+            display += number;
+        }
 
     }
 
@@ -30,7 +36,11 @@ public class CalculatorImpl implements Calculator {
 
     @Override
     public void div(double number1, double number2) {
-
+        if (number2==0){
+            throw new IllegalArgumentException("Error divide by zero");
+        }
+        double result = number1/number2;
+        display = String.valueOf(result);
     }
 
     @Override

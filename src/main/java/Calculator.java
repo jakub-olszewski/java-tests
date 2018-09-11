@@ -8,7 +8,7 @@ public interface Calculator {
      * Metoda dzialajaca na wcisniecie klawisza na kalkulatorze
      * @param number wcisnietym klawiszem
      */
-    public void pressNumber(int number);
+    public void pressNumber(Object number) throws CalculatorException;
 
     /**
      * Metoda zwraca zawartosc wyswietlacza

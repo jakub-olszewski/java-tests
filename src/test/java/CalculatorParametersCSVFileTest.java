@@ -41,6 +41,13 @@ public class CalculatorParametersCSVFileTest {
         assertEquals(result, calc.display());
     }
 
+    @Test
+    @FileParameters("src/test/resources/CalculatorParametersDivCSVFileTest.csv")
+    public void divTest(double number1, double number2, String result) {
+        calc.div(number1,number2);
+        assertEquals(result, calc.display());
+    }
+
     //pobieranie parametrow z metody
     @Test
     @Parameters(method = "parametersToTestAdd")

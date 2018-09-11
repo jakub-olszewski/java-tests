@@ -25,7 +25,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void shouldDisplayNumber(){
+    public void shouldDisplayNumber() throws CalculatorException {
 
         // when
         int number = 5;

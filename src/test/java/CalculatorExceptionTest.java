@@ -57,4 +57,15 @@ public class CalculatorExceptionTest {
         expectedException.expectMessage("Error divide by zero");
         calc.div(1, 0);
     }
+
+    //testowanie przez adnotacje
+    @Test
+    public void exceptionNullPressNumberTest() {
+        try {
+            calc.pressNumber(null);
+        } catch (Exception e) {
+            assertTrue(e instanceof CalculatorException);
+            assertTrue(e.getMessage().contains("Error divide by zero"));
+        }
+    }
 }
